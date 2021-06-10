@@ -1,0 +1,121 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    min-height: 100vh;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 60%;
+    letter-spacing: 1px;
+    margin: 0;
+    text-align: center;
+}
+  
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0.5em;
+}
+  
+ul > li {
+    list-style: none;
+}
+
+.card {
+    cursor: pointer;
+}
+
+h1 {
+    font-size: 3em;
+    font-weight: 400;
+}
+  
+h2 {
+    font-size: 2.5em;
+    font-weight: 600;
+}
+
+.score {
+    font-size: 1.4em;
+    padding: 1em;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 99;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: brown;
+}
+  
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    margin: 5% auto;
+    border: 0.8em solid black;
+    padding-right: 2em;
+    width: 80%;
+}
+  
+.restart {
+    background: purple;
+    margin-bottom: 1em;
+    border-radius: 1em;
+    border: none;
+    color: #fff;
+    padding: 0.8em;
+}
+
+.deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 6em;
+    padding: 0.5em;
+    width: 99em;
+    height: 70em;
+}
+  
+.card {
+    background: #946C38;
+    border-radius: 1em;
+    width: 9em;
+    height: 12em;
+}
+
+.deck img {
+    visibility: hidden;
+    width: 9em;
+    height: 12em;
+    border: 1px solid black;
+    border-radius: 1em;
+}
+  
+.deck .card.flip {
+    cursor: default;
+    transform: rotateY(180deg);
+    transition: transform 0.3s linear;
+    pointer-events: none;
+}
+  
+.flip img {
+    background: #fff;
+    visibility: visible;
+}
+  
+.deck .card.match {
+    visibility: visible;
+    cursor: default;
+}
