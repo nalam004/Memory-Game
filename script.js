@@ -133,8 +133,6 @@ function timer() {
         minutes++;
         seconds = 0;
       }
-      minutes = parseInt(minutes).slice(-1);
-      seconds = seconds.slice(-1);
       
       timeCounter.innerHTML = "Timer: " + minutes + ":" + seconds;
     }, 1000);
