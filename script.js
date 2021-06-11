@@ -52,7 +52,7 @@ function shuffle(array) {
     return array;
 }
 
-function startGame() {
+function start() {
     const shuffled = shuffle(deckCards); 
     for (let i = 0; i < shuffled.length; i++) {
       const liTag = document.createElement('LI');
@@ -65,7 +65,7 @@ function startGame() {
     }
 }
   
-startGame();
+start();
 
 function reset() {
     clearInterval(time);
@@ -77,10 +77,10 @@ function reset() {
     minutes = 0;
     timeCounter.innerHTML = "Timer: 00:00";
     moves = 0;
-    movesCount.innerHTML = 0;
+    movesCount.innerHTML = 0 + " moves";
     matched = [];
     opened = [];
-    startGame();
+    start();
 }
   
 function compare() {
@@ -128,12 +128,15 @@ function finish() {
 
 function timer() {
     time = setInterval(function() {
-    seconds++;
-    if (seconds === 60) {
+      seconds++;
+      if (seconds === 60) {
         minutes++;
         seconds = 0;
-    }
-    timeCounter.innerHTML = "Timer: 0" + minutes + ":0" + seconds;
+      }
+      minutes = ('0' + parseInt(minutes)).slice(-2);
+      seconds = ('0' + seconds).slice(-2);
+      
+      timeCounter.innerHTML = "Timer: 0" + minutes + ":0" + seconds;
     }, 1000);
 }
   
